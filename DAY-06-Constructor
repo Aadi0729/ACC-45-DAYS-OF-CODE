@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+class Employee 
+{
+  public:
+    int age;
+    Employee() 
+	{
+      age = 50;
+    }
+};
+
+int main() 
+{
+  Employee employee1;
+  cout << employee1.age;
+  return 0;
+}
