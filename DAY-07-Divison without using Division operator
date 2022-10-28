@@ -1,0 +1,49 @@
+#include <iostream>
+using namespace std;
+int division(int num_one, int num_two) 
+{
+   if (num_one == 0) 
+   {
+      return 0;
+   }
+   if (num_two == 0) 
+   {
+      return INT_MAX;
+   }
+   bool negative_result = false;
+   if (num_one < 0) 
+   {
+      num_one = -num_one ;
+      if (num_two < 0) 
+	  {
+         num_two = -num_two ;
+      }
+      else 
+	  {
+         negative_result = true;
+      }
+   }
+   else 
+   if (num_two < 0) 
+   {
+      num_two = -num_two;
+      negative_result = true;
+   }
+   int quotient = 0;
+   while (num_one >= num_two) 
+   {
+      num_one = num_one - num_two;
+      quotient++;
+   }
+   if (negative_result) 
+   {
+      quotient = -quotient;
+   }
+   return quotient;
+}
+int main() 
+{
+   int num_one = 30, num_two = 2;
+   cout << division(num_one, num_two) << endl;
+   return 0;
+}
